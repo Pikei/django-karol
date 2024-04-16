@@ -21,3 +21,21 @@ django-admin.exe startproject mysite .
 python manage.py migrate
 
 python manage.py runserver
+
+python manage.py startapp blog
+
+python manage.py makemigrations blog
+
+python manage.py migrate blog
+
+python manage.py createsuperuser
+
+python manage.py runserver 
+
+
+PYTHON ANYWHERE:
+
+pip3.6 install --user pythonanywhere
+
+pa_autoconfigure_django.py https://github.com/Pikei/django-karol.git
+
