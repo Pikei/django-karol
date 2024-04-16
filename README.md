@@ -86,3 +86,9 @@ Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date
 
 exit()
 
+PYTHON ANYWHERE:
+
+workon pikej.pythonanywhere.com
+
+python manage.py collectstatic
+
