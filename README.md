@@ -39,3 +39,7 @@ pip3.6 install --user pythonanywhere
 
 pa_autoconfigure_django.py https://github.com/Pikei/django-karol.git
 
+cd pikej.pythonanywhere.com
+
+git pull
+
