@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -52,6 +52,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'mysite.urls'
 
+STATICFILES_DIRS = ( os.path.join(BASE_DIR,'/static/'),)
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -87,14 +89,6 @@ DATABASES = {
     }
 }
 
-# 'ENGINE': 'django.db.backends.postgresql',
-# 'NAME': 'PostgreSQL 16',
-# 'USER': 'postgres',
-# 'PASSWORD': 'zaq1@WSX',
-# 'HOST': 'localhost',
-# 'PORT': '5432',
-
-
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -113,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+AUTH_USER_MODEL = 'blog.User'
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 

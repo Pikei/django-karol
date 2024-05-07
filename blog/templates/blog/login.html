@@ -1,0 +1,26 @@
+{% load static %}
+    <head>
+        <link rel="stylesheet" href="{% static 'css/login.css' %}">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+    <div class="page-header">
+        {% if user.is_authenticated %}
+            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-user"></span></a>
+        {% endif %}
+        <h1><a href="/">Django Blog</a></h1>
+    </div>
+    <div class="login-wrapper">
+        <form class="login-form" method="POST">{% csrf_token %}
+            <input id="username" type="text" placeholder="Enter your username">
+            <input id="email" type="text" placeholder="Enter your email">
+            <input id="password" type="password" placeholder="Enter your password">
+            <input id="repeat password" type="password" placeholder="Repeat your password">
+            <input id="submit" type="submit" value="Login">
+        </form>
+    </div>
+    </body>
+
