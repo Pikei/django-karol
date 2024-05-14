@@ -49,11 +49,13 @@ def post_edit(request, pk):
 
 def signUp(request):
     User = get_user_model()
+    print(request.POST.get('username'))
     if request.user.is_authenticated:
-        return render(request=request, template_name="home.html")
+        return render(request, 'blog/post_list.html')
 
     if request.method == 'POST':
         username = request.POST.get('username', '')
+        # print(username)
         email = request.POST.get('email', '')
         password = request.POST.get('password1', '')
         dob = request.POST.get('dob', '')
@@ -70,6 +72,7 @@ def signUp(request):
 
 
 def signIn(request):
+    print(request.POST)
     if request.method == 'POST':
         username = request.POST.get("username")
         password = request.POST.get("password")

@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="login-wrapper">
+        <form class="login-form" method="POST">{% csrf_token %}
+            <input id="username" type="text" placeholder="Enter your username">
+            <input id="email" type="text" placeholder="Enter your email">
+            <input id="password" type="password" placeholder="Enter your password">
+            <input id="repeat password" type="password" placeholder="Repeat your password"><br>
+            <input id="submit" type="submit" value="Sign Up">
+            <p>Don't have an account? <a href="{% url 'signUp' %}">Sign up</a></p>
+        </form>
+    </div>
+{% endblock %}
